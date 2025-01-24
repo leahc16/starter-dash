@@ -1,0 +1,20 @@
+.node {
+    &.editTextNode {
+        background: lavender;
+    }
+    .editor-container {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff;
+        min-height: 100px; // Ensure the editor has some initial height
+        overflow-y: auto;
+    }
+    
+    .editor-container .ProseMirror {
+        outline: none; // Remove focus outline
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}

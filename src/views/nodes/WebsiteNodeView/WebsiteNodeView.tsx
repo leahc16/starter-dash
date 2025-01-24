@@ -1,28 +1,27 @@
 import { observer } from "mobx-react";
 import * as React from 'react';
-import { VideoNodeStore } from "../../../stores";
+import { WebsiteNodeStore } from "../../../stores";
 import "./../NodeView.scss";
 import { TopBar } from "./../TopBar";
 import { ResizeBar } from "./../ResizeBar";
-import "./VideoNodeView.scss";
+import "./WebsiteNodeView.scss";
 
-interface VideoNodeProps {
-    store: VideoNodeStore;
+interface WebsiteNodeProps {
+    store: WebsiteNodeStore;
 }
 
 @observer
-export class VideoNodeView extends React.Component<VideoNodeProps> {
-
+export class WebsiteNodeView extends React.Component<WebsiteNodeProps> {
     render() {
         let store = this.props.store;
         return (
-            <div className="node videoNode" style={{ transform: store.transform }}>
+            <div className="node websiteNode" style={{ transform: store.transform}}>
                 <TopBar store={store}/>
                 <ResizeBar store={store}/>
                 <div className="scroll-box">
                     <div className="content">
                         <h3 className="title">{store.title}</h3>
-                        <video src={store.url} controls />
+                        <iframe id='website' title='embedded-website' src={store.url}></iframe>
                     </div>
                 </div>
             </div>

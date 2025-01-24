@@ -8,8 +8,13 @@ export class NodeCollectionStore extends NodeStore {
 
     @computed
     public get transform(): string {
-        return "translate(" + this.x + "px," + this.y + "px)"; // for CSS trnsform property
-    }
+        return "translate(" + this.x + "px," + this.y + "px)"; // for CSS transform property
+    } 
+
+  /*  @computed
+    public get resize(): string {
+        return "scale(" + this.newWidth / this.width + ", " + this.newHeight / this.height + ")"; 
+    } */
 
     @action
     public addNodes(stores: NodeStore[]): void {

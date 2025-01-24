@@ -3,11 +3,13 @@ import { Utils } from "../Utils";
 
 export enum StoreType {
     Text, 
-    Video
+    Video,
+    Website,
+    Image,
+    EditText
 }
 
 export class NodeStore {
-
     public Id: string = Utils.GenerateGuid();
 
     public type: StoreType | null = null;
@@ -22,10 +24,21 @@ export class NodeStore {
     public width: number = 0;
 
     @observable
-    public height: number = 0;
+    public height: number = 0; 
+
+    @observable
+    public newWidth: number = 0;
+
+    @observable
+    public newHeight: number = 0;
 
     @computed
     public get transform(): string {
-        return "translate(" + this.x + "px, " + this.y + "px)";
-    }
+        return "translate(" + this.x + "px, " + this.y + "px)"; 
+    } 
+
+    @computed
+    public get resize(): string {
+        return "scale(" + this.newWidth / this.width + ", " + this.newHeight / this.height + ")"; 
+    } 
 }

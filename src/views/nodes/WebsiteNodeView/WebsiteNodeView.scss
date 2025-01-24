@@ -1,0 +1,10 @@
+.node {
+    &.websiteNode {
+        background: palegoldenrod;
+    }
+    iframe {
+        border: 1px solid black;
+        height: 100%;
+        width: 100%;
+      }      
+}

@@ -1,4 +1,4 @@
-import { observable } from "mobx";
+import { observable, action } from "mobx";
 import { NodeStore } from "./NodeStore";
 
 export class StaticTextNodeStore extends NodeStore {
@@ -26,4 +26,9 @@ export class StaticTextNodeStore extends NodeStore {
 
     @observable
     public text: string = "";
+
+  /*  @action
+    setText(newText: string) {
+        this.text = newText;
+    } */
 }
