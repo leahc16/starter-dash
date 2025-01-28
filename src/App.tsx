@@ -29,7 +29,7 @@ for (let i = 0; i < numNodes / 4; i++) {
     nodes.push(new VideoNodeStore({ type: StoreType.Video, x: Math.random() * maxX, y: Math.random() * maxY, title: "Video Node Title", url: "http://cs.brown.edu/people/peichman/downloads/cted.mp4" }));
 }
 
-//nodes.push(new ImageNodeStore({ type: StoreType.Image, x: 0, y: 0, title: "taco cat", alt: 'react logo', url: "https://cdn.iconscout.com/icon/free/png-512/free-react-logo-icon-download-in-svg-png-gif-file-formats--company-brand-world-logos-vol-4-pack-icons-282599.png?f=webp&w=256"}));
+nodes.push(new ImageNodeStore({ type: StoreType.Image, x: 0, y: 0, title: "taco cat", alt: 'react logo', url: "https://cdn.iconscout.com/icon/free/png-512/free-react-logo-icon-download-in-svg-png-gif-file-formats--company-brand-world-logos-vol-4-pack-icons-282599.png?f=webp&w=256"}));
 
 // add set of 300 nodes to node collection
 mainNodeCollection.addNodes(nodes);

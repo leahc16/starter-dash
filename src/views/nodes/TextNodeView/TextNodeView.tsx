@@ -6,17 +6,18 @@ import { ResizeBar } from "../ResizeBar";
 import "./../NodeView.scss";
 import "./TextNodeView.scss";
 
+
+
 interface TextNodeProps {
     store: StaticTextNodeStore;
 }
 
 @observer
 export class TextNodeView extends React.Component<TextNodeProps> {
-  
     render() {
         let store = this.props.store;
         return (
-            <div className="node textNode" style={{transform: store.resize } } onWheel={(e: React.WheelEvent) => {
+            <div className="node textNode" style={{transform:store.resize } } onWheel={(e: React.WheelEvent) => {
                 e.stopPropagation();
                 e.preventDefault();
             }}>
@@ -33,8 +34,3 @@ export class TextNodeView extends React.Component<TextNodeProps> {
         );
     }
 }
-
- /* state = {
-        width: 300,
-        height: 300
-    }; */

@@ -26,6 +26,7 @@ export class ResizeBar extends React.Component<ResizeBarProps> {
         e.stopPropagation();
         e.preventDefault();
         this.isClicked = false;
+       // this.props.store.switch = 0;
         document.removeEventListener("pointermove", this.onPointerMove);
         document.removeEventListener("pointerup", this.onPointerUp);
     }
@@ -44,10 +45,12 @@ export class ResizeBar extends React.Component<ResizeBarProps> {
 
         this.props.store.newWidth += -1 * e.movementX;
         this.props.store.newHeight += -1 * e.movementY;
+
+      //  this.props.store.switch = false;
      //   console.log("old width: " + this.props.store.newWidth);
 
     //    console.log("new width: " + this.props.store.width);
-    console.log(e.movementX);
+        console.log(e.movementX);
 
     }
 

@@ -10,12 +10,12 @@ interface FreeFormProps {
     store: NodeCollectionStore
 }
 
-const nodeCollection = new NodeCollectionStore();
+//const nodeCollection = new NodeCollectionStore();
 let nodes: NodeStore[] = [];
-
 @observer
 export class FreeFormCanvas extends React.Component<FreeFormProps> {
     private isPointerDown: boolean | undefined;
+   // this.props.store.nodes; 
 
     onPointerDown = (e: React.PointerEvent): void => {
         e.stopPropagation();
@@ -57,7 +57,7 @@ export class FreeFormCanvas extends React.Component<FreeFormProps> {
                 console.log('anything else')
                 break;        
         }
-        mainNodeCollection
+      //  mainNodeCollection
     }
 
     render() {

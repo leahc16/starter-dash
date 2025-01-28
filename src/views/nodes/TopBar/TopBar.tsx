@@ -26,6 +26,7 @@ export class TopBar extends React.Component<TopBarProps> {
         e.stopPropagation();
         e.preventDefault();
         this.isPointerDown = false;
+      //  this.props.store.switch = 0;
         document.removeEventListener("pointermove", this.onPointerMove);
         document.removeEventListener("pointerup", this.onPointerUp);
     }
@@ -35,6 +36,7 @@ export class TopBar extends React.Component<TopBarProps> {
         e.preventDefault();
         if (!this.isPointerDown) return;
 
+       // this.props.store.switch = true;
         this.props.store.x += e.movementX;
         this.props.store.y += e.movementY;
     }
