@@ -32,18 +32,20 @@ export class NodeStore {
     @observable
     public newHeight: number = 0;
 
-    @observable
-    public switch: Boolean = false;
+    // @observable
+    // public switch: Boolean = false;
 
    // public switch: number = 0;
 
 
     @computed
     public get transform(): string {
-       // if (this.switch) {
+     //   if (this.switch == false) {
             return "translate(" + this.x + "px, " + this.y + "px)"; 
-       // }
-       // return "scale(" + this.newWidth / this.width + ", " + this.newHeight / this.height + ")";
+      //  }
+    //    else {
+    //        return "scale(" + this.newWidth / this.width + ", " + this.newHeight / this.height + ")";
+    //    }
     } 
 
     @computed

@@ -20,6 +20,8 @@ export class TopBar extends React.Component<TopBarProps> {
         document.addEventListener("pointermove", this.onPointerMove);
         document.removeEventListener("pointerup", this.onPointerUp);
         document.addEventListener("pointerup", this.onPointerUp);
+
+        //this.props.store.switch = false;
     }
 
     onPointerUp = (e: PointerEvent): void => {

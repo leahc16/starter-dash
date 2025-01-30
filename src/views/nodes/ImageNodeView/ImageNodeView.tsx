@@ -19,7 +19,7 @@ export class ImageNodeView extends React.Component<ImageNodeProps> {
             transform: translate(2px, 3px) scale(2);
         }  */
         return (
-            <div className="node imageNode" style={{transform: store.transform}}>
+            <div className="node imageNode" style={{transform: store.transform + store.resize}}>
                 <TopBar store={store}/>
                 <ResizeBar store={store}/>
                 <div className="scroll-box">

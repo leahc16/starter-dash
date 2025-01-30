@@ -1,4 +1,5 @@
 import { observer } from "mobx-react";
+import {action} from "mobx";
 import * as React from 'react';
 import { NodeStore } from "../../../stores";
 import "./ResizeBar.scss";
@@ -20,18 +21,20 @@ export class ResizeBar extends React.Component<ResizeBarProps> {
         document.addEventListener("pointermove", this.onPointerMove);
         document.removeEventListener("pointerup", this.onPointerUp);
         document.addEventListener("pointerup", this.onPointerUp);
+
+     //   this.props.store.switch = true;
     }
 
     onPointerUp = (e: PointerEvent): void => {
         e.stopPropagation();
         e.preventDefault();
         this.isClicked = false;
-       // this.props.store.switch = 0;
+     //   this.props.store.switch = false;
         document.removeEventListener("pointermove", this.onPointerMove);
         document.removeEventListener("pointerup", this.onPointerUp);
     }
 
-  //  @action
+    @action
     onPointerMove = (e: PointerEvent): void => {
         e.stopPropagation();
         e.preventDefault();
@@ -50,7 +53,7 @@ export class ResizeBar extends React.Component<ResizeBarProps> {
      //   console.log("old width: " + this.props.store.newWidth);
 
     //    console.log("new width: " + this.props.store.width);
-        console.log(e.movementX);
+      //  console.log(e.movementX);
 
     }
 

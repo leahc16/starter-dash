@@ -5,11 +5,13 @@ import { TopBar } from "../TopBar";
 import { ResizeBar } from "../ResizeBar";
 import "./../NodeView.scss";
 import "./EditTextNodeView.scss";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+//import {TextEditor} from "../TextEditor";
 
-import { EditorContent, Editor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
+// import { EditorContent, Editor } from "@tiptap/react";
+// import StarterKit from "@tiptap/starter-kit";
 
-//import "react-quill/dist/quill.snow.css";
 
 interface EditTextNodeProps {
     store: EditTextNodeStore;
@@ -18,6 +20,11 @@ interface EditTextNodeProps {
 
 @observer
 export class EditTextNodeView extends React.Component<EditTextNodeProps> {
+    handleChange = (value: string) => {
+        const { store } = this.props;
+        store.text = value; // Update the store with the new editor value
+    };
+
     render() {
         let store = this.props.store;
         return (
@@ -29,13 +36,17 @@ export class EditTextNodeView extends React.Component<EditTextNodeProps> {
                 <ResizeBar store={store}/>
                 <div className="scroll-box">
                     <div className="content">
-                        <h3 className="title">{store.title}</h3>
-                        <div className="editor-container">
-                        </div>
+                         {/*  <TextEditor
+                             value={store} // Bind to store's text property
+                             field="title"
+                             initialText = {store.text} // Quill's theme (default: "snow")
+                            /> */}
+                        </div> 
+                        <p className="paragraph">{store.text}</p> 
                         
                     </div>
                 </div>
-            </div>
+          //  </div>
         );
     }
 } 

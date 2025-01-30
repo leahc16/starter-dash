@@ -1,5 +1,4 @@
 import { action, extendObservable, observable } from "mobx";
-import { JSONContent } from "@tiptap/react";
 import { NodeStore } from "./NodeStore";
 import { observer } from "mobx-react";
 
@@ -21,21 +20,32 @@ import { observer } from "mobx-react";
     }
 } */
     export class EditTextNodeStore extends NodeStore {
-        title: string = "";
-        text: JSONContent | string = "";
-        transfor: string = "";
+      //  title: string = "";
+      //  text: JSONContent | string = "";
+      //  transfor: string = "";
     
-        constructor(title: string, text: string = "", transform: string = "translate(0, 0)") {
+        constructor(initializer: Partial<EditTextNodeStore>){//title: string, text: string = "", transform: string = "translate(0, 0)") {
             super();
-            extendObservable(this, {
-                title,
-                text,
-                transform,
-            });
+            Object.assign(this, initializer);
+            // extendObservable(this, {
+            //     title,
+            //     text,
+            //     transform,
+            // });
         }
     
+        // @action
+        // setTextContent(content: JSONContent) {
+        //     this.text = content;
+        // }
+        @observable
+        public title: string = "";
+    
+        @observable
+        public text: string = "";
         @action
-        setTextContent(content: JSONContent) {
-            this.text = content;
+        public updateField (field: keyof EditTextNodeStore, newText: string) {
+            if (field !== "title"&& field !== "text") return;
+            this[field] = newText;
         }
     }

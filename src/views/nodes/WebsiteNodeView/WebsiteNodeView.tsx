@@ -15,7 +15,7 @@ export class WebsiteNodeView extends React.Component<WebsiteNodeProps> {
     render() {
         let store = this.props.store;
         return (
-            <div className="node websiteNode" style={{ transform: store.transform}}>
+            <div className="node websiteNode" style={{ transform: store.transform + store.resize}}>
                 <TopBar store={store}/>
                 <ResizeBar store={store}/>
                 <div className="scroll-box">
