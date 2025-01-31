@@ -2,12 +2,12 @@ import { observer } from "mobx-react";
 import * as React from 'react';
 import { EditTextNodeStore } from "../../../stores";
 import { TopBar } from "../TopBar";
-import { ResizeBar } from "../ResizeBar";
+import { TextEditor } from "../TextEditor";
 import "./../NodeView.scss";
 import "./EditTextNodeView.scss";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-//import {TextEditor} from "../TextEditor";
+import { ResizeBar } from "../ResizeBar";
 
 // import { EditorContent, Editor } from "@tiptap/react";
 // import StarterKit from "@tiptap/starter-kit";
@@ -36,7 +36,7 @@ export class EditTextNodeView extends React.Component<EditTextNodeProps> {
                 <ResizeBar store={store}/>
                 <div className="scroll-box">
                     <div className="content">
-                         {/*  <TextEditor
+                        {/* <TextEditor
                              value={store} // Bind to store's text property
                              field="title"
                              initialText = {store.text} // Quill's theme (default: "snow")

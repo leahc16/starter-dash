@@ -78,16 +78,6 @@ export class TextEditor extends React.Component<TextEditorProps> {
                         const x = e.clientX - bounds.left;
                         const y = e.clientY - bounds.top;
                     }
-                    
-            //         const position = editor.getSelection();
-            // if (position) {
-            //     // Find the index at the clicked position
-            //     const index = editor.getIndexFromPoint(x, );
-            //     if (index !== null && index !== undefined) {
-            //         // Set the selection to the clicked position
-            //         quillEditor.setSelection(index);
-            //     }
-            // }
                 }
 
                 // const range = (editor?.getLength())
