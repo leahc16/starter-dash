@@ -1,5 +1,6 @@
 import { observable, action } from "mobx";
 import { NodeStore } from "./NodeStore";
+import { observer } from "mobx-react";
 
 export class StaticTextNodeStore extends NodeStore {
 
@@ -31,4 +32,12 @@ export class StaticTextNodeStore extends NodeStore {
     setText(newText: string) {
         this.text = newText;
     } */
+    // Function to link this node to another
+   // @observer
+//    @action
+//     public linkTo(node: StaticTextNodeStore) {
+//         if (!this.links.includes(node)) {
+//             this.links.push(node);
+//         }
+//     }
 }

@@ -6,6 +6,8 @@ export class NodeCollectionStore extends NodeStore {
     @observable
     public nodes: NodeStore[] = new Array<NodeStore>();
 
+    
+
     @computed
     public get transform(): string {
         return "translate(" + this.x + "px," + this.y + "px)"; // for CSS transform property

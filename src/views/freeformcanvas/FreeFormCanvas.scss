@@ -5,6 +5,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background-color: #C8D2D1;
 
     .freeformcanvas {
         position: absolute;
@@ -16,5 +17,27 @@
 .button {
     padding: 10px;
     margin: 10px;
-    cursor: pointer;
+    width: 250px;
+    height: 75px;
+    font-weight: bold;
+
+    border: none;
+    background-color: #68904D;
+    border-radius: 50%;
+    text-align: center;
+    font-size: medium;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 7px #14471E;
 }
+.button:hover{
+    background-color: #14471E;
+    box-shadow: 0 7px #68904D;
+    color: #C8D2D1;
+}
+.button:active {
+    background-color: #14471E;
+    color: #C8D2D1;
+    box-shadow: 0 3px #68904D;
+    transform: translateY(4px);
+  }

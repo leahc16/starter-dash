@@ -31,6 +31,15 @@ export class TextNodeView extends React.Component<TextNodeProps> {
                     <div className="content">
                         <h3 className="title">{store.title}</h3>
                         <p className="paragraph">{store.text}</p> 
+
+                        {/* Render linked nodes */}
+                        <div className="linked-nodes">
+                            {store.links.map((node, index) => (
+                                <div key={index} className="linked-node">
+                                    🔗 Linked to: {node.Id}
+                                </div>
+                            ))}
+                        </div>    
                     </div>
                     
                 </div>

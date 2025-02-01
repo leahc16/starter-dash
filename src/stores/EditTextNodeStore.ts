@@ -25,11 +25,13 @@ export class EditTextNodeStore extends NodeStore {
     public title: string = "";
     
     @observable
-    public text: string = "";
+    public text: string = "start typing...";
 
     @action
     public updateField (field: keyof EditTextNodeStore, newText: string) {
-        if (field !== "title"&& field !== "text") return;
-        this[field] = newText;
+        if (field !== "title" && field !== "text") return;
+        if (field === "text") {
+            this[field] = newText;
+        }
     }
 }

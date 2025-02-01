@@ -3,7 +3,6 @@ import './App.scss';
 import { NodeCollectionStore, NodeStore, StaticTextNodeStore, StoreType, 
   VideoNodeStore, WebsiteNodeStore, ImageNodeStore, EditTextNodeStore } from './stores';
 import { FreeFormCanvas } from './views/freeformcanvas/FreeFormCanvas';
-//import { NewNodes } from './views/newnodes/NewNodes';
 import '@xyflow/react/dist/style.css';
 
 
@@ -14,7 +13,7 @@ const mainNodeCollection = new NodeCollectionStore();
 // let numNodes: number = 300;
 // let maxX: number = 10000;
 // let maxY: number = 10000;
-// let nodes: NodeStore[] = [];
+ let nodes: NodeStore[] = [];
 
 // // add 150 static text nodes to random locations
 // for (let i = 0; i < numNodes / 2; i++) {
@@ -34,6 +33,16 @@ const mainNodeCollection = new NodeCollectionStore();
 // // add set of 300 nodes to node collection
 // mainNodeCollection.addNodes(nodes);
 
+const nodeA = new ImageNodeStore({type: StoreType.Image, x: 100, y: 100, title: "Node A", alt: 'oranges for the color pallette of the site', url: "https://colorpalettes.net/wp-content/uploads/2022/08/color-palette-4568.png"});
+NodeStore.numNode += 1;
+const nodeB = new EditTextNodeStore({type: StoreType.EditText, x: 100, y: 100, title: "Node b", text: "This is node b"});
+nodes.push(nodeA);
+nodes.push(nodeB);
+
+nodeA.linkTo(nodeB); // Link Node A to Node B
+nodeB.linkTo(nodeA);
+
+mainNodeCollection.addNodes(nodes);
 export class App extends React.Component {
     render() {
         return (

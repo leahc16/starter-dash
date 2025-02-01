@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import * as React from 'react';
-import { EditTextNodeStore } from "../../../stores";
-import { TopBar } from "../TopBar";
+import { EditTextNodeStore, NodeStore } from "../../../stores";
+import { TopBar } from "./../TopBar";
 import { TextEditor } from "../TextEditor";
 import "./../NodeView.scss";
 import "./EditTextNodeView.scss";
@@ -28,7 +28,7 @@ export class EditTextNodeView extends React.Component<EditTextNodeProps> {
     render() {
         let store = this.props.store;
         return (
-            <div className="node editTextNode" style={{ transform: store.transform }} onWheel={(e: React.WheelEvent) => {
+            <div className="node editTextNode" style={{ transform: store.transform + store.resize}} onWheel={(e: React.WheelEvent) => {
                 e.stopPropagation();
                 e.preventDefault();
             }}>
@@ -36,14 +36,21 @@ export class EditTextNodeView extends React.Component<EditTextNodeProps> {
                 <ResizeBar store={store}/>
                 <div className="scroll-box">
                     <div className="content">
-                        {/* <TextEditor
-                             value={store} // Bind to store's text property
+                        <h3 className="title">{store.title}</h3>
+                           <TextEditor
+                             store={store} // Bind to store's text property
                              field="title"
-                             initialText = {store.text} // Quill's theme (default: "snow")
-                            /> */}
+                             initialText = {store.text} 
+                            /> 
                         </div> 
-                        <p className="paragraph">{store.text}</p> 
-                        
+                        {/* Render linked nodes */}
+                        <div className="linked-nodes">
+                            {store.links.map((node, index) => (
+                                <div key={index} className="linked-node">
+                                    🔗 Linked to: {NodeStore.numNode}
+                                </div>
+                            ))}
+                        </div>                        
                     </div>
                 </div>
           //  </div>

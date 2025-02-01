@@ -4,7 +4,6 @@ import { NodeStore, NodeCollectionStore, StaticTextNodeStore, StoreType,
     VideoNodeStore, WebsiteNodeStore, ImageNodeStore, EditTextNodeStore } from "../../stores";
 import { TextNodeView, VideoNodeView, WebsiteNodeView, ImageNodeView, EditTextNodeView } from "../nodes";
 import "./FreeFormCanvas.scss";
-//import { NewNodes } from './views/newnodes/NewNodes';
 
 interface FreeFormProps {
     store: NodeCollectionStore
@@ -44,26 +43,24 @@ export class FreeFormCanvas extends React.Component<FreeFormProps> {
     }
 
     addNode(type: StoreType): void {
+        NodeStore.numNode += 1;
         switch(type) {
             case StoreType.Text:
-                console.log("text")
-                this.props.store.nodes.push(new StaticTextNodeStore({ type: StoreType.Text, x: 400, y: 10, title: "Need to resize before moving", text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?" }));
+                this.props.store.nodes.push(new StaticTextNodeStore({ type: StoreType.Text, x: 0, y: 0, title: "Need to resize before moving, Node " + NodeStore.numNode, text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?" }));
                 break;
             case StoreType.Video:
-                console.log('vid')
-                this.props.store.nodes.push(new VideoNodeStore({ type: StoreType.Video, x: 100, y: 20, title: "Need to resize before moving", url: "http://cs.brown.edu/people/peichman/downloads/cted.mp4" }));
+                this.props.store.nodes.push(new VideoNodeStore({ type: StoreType.Video, x: 0, y: 0, title: "Need to resize before moving", url: "http://cs.brown.edu/people/peichman/downloads/cted.mp4" }));
                 break;
             case StoreType.Website:
-                this.props.store.nodes.push(new WebsiteNodeStore({ type: StoreType.Website, x: 10, y: 30, title: "Need to resize before moving", url: "https://en.wikipedia.org/wiki/HTML" }))
+                this.props.store.nodes.push(new WebsiteNodeStore({ type: StoreType.Website, x: 0, y: 0, title: "Need to resize before moving", url: "https://en.wikipedia.org/wiki/HTML" }))
                 break;
             case StoreType.Image:
-                this.props.store.nodes.push(new ImageNodeStore({ type: StoreType.Image, x: 0, y: 0, title: "Need to resize before moving", alt: 'react logo', url: "https://cdn.iconscout.com/icon/free/png-512/free-react-logo-icon-download-in-svg-png-gif-file-formats--company-brand-world-logos-vol-4-pack-icons-282599.png?f=webp&w=256"}));
+                this.props.store.nodes.push(new ImageNodeStore({ type: StoreType.Image, x: 0, y: 0, title: "Need to resize before moving", alt: 'oranges for the color pallette of the site', url: "https://colorpalettes.net/wp-content/uploads/2022/08/color-palette-4568.png"}));
                 break;
             case StoreType.EditText:
-                this.props.store.nodes.push(new EditTextNodeStore({type: StoreType.EditText, x: 10, y: 50, title: "Need to resize before moving", text: "<p>Editable content here...</p>"}));
+                this.props.store.nodes.push(new EditTextNodeStore({type: StoreType.EditText, x: 0, y: 0, title: "Need to resize before moving"}));
                 break;        
             default:
-                console.log('anything else')
                 break;        
         }
     }

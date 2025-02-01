@@ -5,6 +5,7 @@
     height: 300px;
     overflow: hidden;
         
+    
     &.minimized {
         width: 30px;
         height: 30px;
@@ -20,5 +21,4 @@
         overflow-y: scroll;
         height: calc(100% - 20px);
     }
-
 }

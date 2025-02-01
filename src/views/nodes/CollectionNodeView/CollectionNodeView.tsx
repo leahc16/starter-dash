@@ -50,19 +50,19 @@ export class FreeFormCanvas extends React.Component<CollectionProps> {
     addNode(type: StoreType): void {
         switch(type) {
             case StoreType.Text:
-                this.collectionNodes.push(new StaticTextNodeStore({ type: StoreType.Text, x: 400, y: 10, title: "Need to resize before moving", text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?" }));
+                this.collectionNodes.push(new StaticTextNodeStore({ type: StoreType.Text, x: 0, y: 0, title: "Need to resize before moving", text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?" }));
                 break;
             case StoreType.Video:
-                this.collectionNodes.push(new VideoNodeStore({ type: StoreType.Video, x: 100, y: 20, title: "Need to resize before moving", url: "http://cs.brown.edu/people/peichman/downloads/cted.mp4" }));
+                this.collectionNodes.push(new VideoNodeStore({ type: StoreType.Video, x: 0, y: 0, title: "Need to resize before moving", url: "http://cs.brown.edu/people/peichman/downloads/cted.mp4" }));
                 break;
             case StoreType.Website:
-                this.collectionNodes.push(new WebsiteNodeStore({ type: StoreType.Website, x: 10, y: 30, title: "Need to resize before moving", url: "https://en.wikipedia.org/wiki/HTML" }))
+                this.collectionNodes.push(new WebsiteNodeStore({ type: StoreType.Website, x: 0, y: 0, title: "Need to resize before moving", url: "https://en.wikipedia.org/wiki/HTML" }))
                 break;
             case StoreType.Image:
                 this.collectionNodes.push(new ImageNodeStore({ type: StoreType.Image, x: 0, y: 0, title: "Need to resize before moving", alt: 'react logo', url: "https://cdn.iconscout.com/icon/free/png-512/free-react-logo-icon-download-in-svg-png-gif-file-formats--company-brand-world-logos-vol-4-pack-icons-282599.png?f=webp&w=256"}));
                 break;
             case StoreType.EditText:
-                this.collectionNodes.push(new EditTextNodeStore({type: StoreType.EditText, x: 10, y: 50, title: "Need to resize before moving", text: "<p>Editable content here...</p>"}));
+                this.collectionNodes.push(new EditTextNodeStore({type: StoreType.EditText, x: 0, y: 0, title: "Need to resize before moving"}));
                 break;        
             default:
                 break;        

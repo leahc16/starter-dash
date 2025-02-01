@@ -16,7 +16,6 @@ export class DeleteBar extends React.Component<DeleteBarProps> {
         e.preventDefault();
         document.removeEventListener("pointerup", this.onPointerUp);
         document.addEventListener("pointerup", this.onPointerUp);
-
     }
 
     onPointerUp = (e: PointerEvent): void => {

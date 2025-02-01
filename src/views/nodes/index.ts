@@ -5,3 +5,4 @@ export * from './VideoNodeView';
 export * from './ImageNodeView';
 export * from './EditTextNodeView';
 export * from './ResizeBar';
+export * from './TextEditor';

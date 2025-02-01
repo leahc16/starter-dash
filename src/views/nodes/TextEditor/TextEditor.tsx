@@ -113,7 +113,7 @@ export class TextEditor extends React.Component<TextEditorProps> {
                 ) : (
                     <div
                         onClick={this.startEditing}
-                        style={{ cursor: "pointer", border: "1px solid #ccc", padding: "10px" }}
+                        style={{ cursor: "pointer", border: "2px solid #DA6A00", padding: "10px" }}
                     >
                     <div dangerouslySetInnerHTML={{__html: this.currentText}}></div>
                     </div>

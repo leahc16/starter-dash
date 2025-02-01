@@ -1,20 +1,5 @@
 .node {
     &.textNode {
-        background: pink;
-    }
-
-    &.rich-text-editor {
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        padding: 10px;
-        min-height: 100px;
-        background-color: #fff;
-        overflow-y: auto;
-        font-family: Arial, sans-serif;
-    
-        &:focus-within {
-            border-color: #007bff;
-            box-shadow: 0 0 3px #007bff;
-        }
+        background: #EE9B01;
     }
 }

@@ -1,4 +1,4 @@
-import { computed, observable } from "mobx";
+import { computed, observable, action } from "mobx";
 import { Utils } from "../Utils";
 
 export enum StoreType {
@@ -32,24 +32,28 @@ export class NodeStore {
     @observable
     public newHeight: number = 0;
 
-    // @observable
-    // public switch: Boolean = false;
+    @observable 
+    public links: NodeStore[] = []; // Stores linked nodes
 
-   // public switch: number = 0;
+    @observable
+    public static numNode: number = 0;
+
 
 
     @computed
     public get transform(): string {
-     //   if (this.switch == false) {
-            return "translate(" + this.x + "px, " + this.y + "px)"; 
-      //  }
-    //    else {
-    //        return "scale(" + this.newWidth / this.width + ", " + this.newHeight / this.height + ")";
-    //    }
+        return "translate(" + this.x + "px, " + this.y + "px)"; 
     } 
 
     @computed
     public get resize(): string {
         return "scale(" + this.newWidth / this.width + ", " + this.newHeight / this.height + ")"; 
     } 
+    @action
+    public linkTo(node: NodeStore) {
+      //  if (!this.links.includes(node)) {
+            this.links.push(node);
+      //  }
+    }
+
 }

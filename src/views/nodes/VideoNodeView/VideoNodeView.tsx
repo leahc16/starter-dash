@@ -16,7 +16,7 @@ export class VideoNodeView extends React.Component<VideoNodeProps> {
     render() {
         let store = this.props.store;
         return (
-            <div className="node videoNode" style={{ transform: store.transform }}>
+            <div className="node videoNode" style={{ transform: store.transform + store.resize}}>
                 <TopBar store={store}/>
                 <ResizeBar store={store}/>
                 <div className="scroll-box">
