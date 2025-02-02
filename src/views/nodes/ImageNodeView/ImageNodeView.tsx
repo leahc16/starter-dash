@@ -1,6 +1,6 @@
 import { observer } from "mobx-react";
 import * as React from 'react';
-import { ImageNodeStore } from "../../../stores";
+import { ImageNodeStore, NodeStore } from "../../../stores";
 import "./../NodeView.scss";
 import { TopBar } from "../TopBar";
 import { ResizeBar } from "../ResizeBar";
@@ -27,7 +27,7 @@ export class ImageNodeView extends React.Component<ImageNodeProps> {
                         <div className="linked-nodes">
                             {store.links.map((node, index) => (
                                 <div key={index} className="linked-node">
-                                    🔗 Linked to: {node.Id}
+                                    🔗 Linked to node {node.id}
                                 </div>
                             ))}
                         </div>

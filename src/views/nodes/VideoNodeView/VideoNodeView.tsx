@@ -23,6 +23,14 @@ export class VideoNodeView extends React.Component<VideoNodeProps> {
                     <div className="content">
                         <h3 className="title">{store.title}</h3>
                         <video src={store.url} controls />
+                        {/* Render linked nodes */}
+                        <div className="linked-nodes">
+                            {store.links.map((node, index) => (
+                                <div key={index} className="linked-node">
+                                    🔗 Linked to node {node.id}
+                                </div>
+                            ))}
+                        </div> 
                     </div>
                 </div>
             </div>

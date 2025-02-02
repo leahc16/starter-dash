@@ -14,10 +14,10 @@
     }
 }
 
-.button {
+.btn-group button {
     padding: 10px;
-    margin: 10px;
-    width: 250px;
+    margin: 20px;
+    width: 200px;
     height: 75px;
     font-weight: bold;
 
@@ -29,13 +29,16 @@
     display: inline-block;
     text-decoration: none;
     box-shadow: 0 7px #14471E;
+
+    cursor: pointer;
+    display: block;
 }
-.button:hover{
+.btn-group button:hover{
     background-color: #14471E;
     box-shadow: 0 7px #68904D;
     color: #C8D2D1;
 }
-.button:active {
+.btn-group button:active {
     background-color: #14471E;
     color: #C8D2D1;
     box-shadow: 0 3px #68904D;

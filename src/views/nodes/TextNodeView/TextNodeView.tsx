@@ -1,6 +1,6 @@
 import { observer } from "mobx-react";
 import * as React from 'react';
-import { NodeCollectionStore, StaticTextNodeStore } from "../../../stores";
+import { NodeCollectionStore, NodeStore, StaticTextNodeStore } from "../../../stores";
 import { TopBar } from "../TopBar";
 import { ResizeBar } from "../ResizeBar";
 import { DeleteBar } from "../DeleteBar";
@@ -36,7 +36,7 @@ export class TextNodeView extends React.Component<TextNodeProps> {
                         <div className="linked-nodes">
                             {store.links.map((node, index) => (
                                 <div key={index} className="linked-node">
-                                    🔗 Linked to: {node.Id}
+                                    🔗 Linked to node {node.id}
                                 </div>
                             ))}
                         </div>    

@@ -22,6 +22,14 @@ export class WebsiteNodeView extends React.Component<WebsiteNodeProps> {
                     <div className="content">
                         <h3 className="title">{store.title}</h3>
                         <iframe id='website' title='embedded-website' src={store.url}></iframe>
+                        {/* Render linked nodes */}
+                        <div className="linked-nodes">
+                            {store.links.map((node, index) => (
+                                <div key={index} className="linked-node">
+                                    🔗 Linked to node {node.id}
+                                </div>
+                            ))}
+                        </div> 
                     </div>
                 </div>
             </div>

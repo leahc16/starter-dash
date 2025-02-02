@@ -1,0 +1,11 @@
+.node {
+    &.collectionNode {
+        background: #EE9B01;
+    }
+    iframe {
+        border: 2px solid #DA6A00;
+        height: 1000px;
+        width: 1000px;
+        resize: both;
+      }      
+}

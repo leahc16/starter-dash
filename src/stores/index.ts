@@ -5,3 +5,4 @@ export * from './VideoNodeStore';
 export * from './WebsiteNodeStore';
 export * from './ImageNodeStore';
 export * from './EditTextNodeStore';
+export * from './CollectNodeStore';

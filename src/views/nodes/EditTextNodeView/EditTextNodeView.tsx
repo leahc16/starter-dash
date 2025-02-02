@@ -47,7 +47,7 @@ export class EditTextNodeView extends React.Component<EditTextNodeProps> {
                         <div className="linked-nodes">
                             {store.links.map((node, index) => (
                                 <div key={index} className="linked-node">
-                                    🔗 Linked to: {NodeStore.numNode}
+                                    🔗 Linked to node {node.id}
                                 </div>
                             ))}
                         </div>                        

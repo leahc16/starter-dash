@@ -6,7 +6,8 @@ export enum StoreType {
     Video,
     Website,
     Image,
-    EditText
+    EditText,
+    Collection
 }
 
 export class NodeStore {
@@ -38,6 +39,7 @@ export class NodeStore {
     @observable
     public static numNode: number = 0;
 
+    public id: number = NodeStore.numNode;
 
 
     @computed
