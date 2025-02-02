@@ -18,7 +18,7 @@
     padding: 10px;
     margin: 20px;
     width: 200px;
-    height: 75px;
+    height: 70px;
     font-weight: bold;
 
     border: none;
@@ -26,7 +26,6 @@
     border-radius: 50%;
     text-align: center;
     font-size: medium;
-    display: inline-block;
     text-decoration: none;
     box-shadow: 0 7px #14471E;
 
@@ -43,4 +42,35 @@
     color: #C8D2D1;
     box-shadow: 0 3px #68904D;
     transform: translateY(4px);
-  }
+}
+
+.org-group button {
+    padding: 10px;
+    margin: 20px;
+    width: 200px;
+    height: 70px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    color:#C8D2D1;
+
+    border: none;
+    background-color: #14471E;
+    border-radius: 50%;
+    text-align: center;
+    font-size: medium;
+  //  display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 7px #68904D;
+}
+.org-group button:hover{
+    background-color: #68904D;
+    box-shadow: 0 7px #14471E;
+    color: black;
+}
+.org-group button:active {
+    background-color: #68904D;
+    color: black;
+    box-shadow: 0 3px #14471E;
+    transform: translateY(4px);
+}

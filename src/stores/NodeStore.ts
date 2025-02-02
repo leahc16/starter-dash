@@ -39,6 +39,7 @@ export class NodeStore {
     @observable
     public static numNode: number = 0;
 
+    @observable
     public id: number = NodeStore.numNode;
 
 
@@ -57,5 +58,6 @@ export class NodeStore {
             this.links.push(node);
       //  }
     }
+    
 
 }

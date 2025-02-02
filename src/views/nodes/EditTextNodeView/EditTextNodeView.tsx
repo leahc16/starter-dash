@@ -1,13 +1,14 @@
 import { observer } from "mobx-react";
 import * as React from 'react';
-import { EditTextNodeStore, NodeStore } from "../../../stores";
+import { EditTextNodeStore, NodeCollectionStore, NodeStore } from "../../../stores";
 import { TopBar } from "./../TopBar";
 import { TextEditor } from "../TextEditor";
 import "./../NodeView.scss";
 import "./EditTextNodeView.scss";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { ResizeBar } from "../ResizeBar";
+import { cursorTo } from "readline";
+
 
 // import { EditorContent, Editor } from "@tiptap/react";
 // import StarterKit from "@tiptap/starter-kit";
@@ -18,12 +19,19 @@ interface EditTextNodeProps {
 }
 
 
+const link = {
+    color: 'navy',
+    cursor: 'pointer',
+    style: 'underline',
+};
 @observer
 export class EditTextNodeView extends React.Component<EditTextNodeProps> {
     handleChange = (value: string) => {
         const { store } = this.props;
         store.text = value; // Update the store with the new editor value
     };
+
+    
 
     render() {
         let store = this.props.store;
@@ -44,7 +52,7 @@ export class EditTextNodeView extends React.Component<EditTextNodeProps> {
                             /> 
                         </div> 
                         {/* Render linked nodes */}
-                        <div className="linked-nodes">
+                        <div className="linked-nodes" onClick={() => alert(234)} style={link}>
                             {store.links.map((node, index) => (
                                 <div key={index} className="linked-node">
                                     🔗 Linked to node {node.id}
