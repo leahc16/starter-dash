@@ -27,10 +27,11 @@ export class CollectionNodeView extends React.Component<CollectNodeProps> {
     render() {
         let store = this.props.store;
         let nodeCollection = this.props.nodeCollection;
+
         return (
-            <div className="node collectionNode" style={{ transform: store.transform + store.resize}}>
+            <div className="node collectionNode" style={{transform: store.transform + store.resize }}>
                 <TopBar store={store}/>
-                <ResizeBar store={store}/>
+                 <ResizeBar store={store}/>
                 <div className="scroll-box">
                     <div className="content">
                         <h3 className="title">{store.title}</h3>
