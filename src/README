@@ -22,6 +22,7 @@ qualities such as x and y coordinates, hence all extending NodeStore.
 KNOWN BUGS: 
 The nodes will not move either by dragging the top bar or pressing "view as list" until they have been 
 resized first. There is also the occasional issue where clicking the link to another node will not correctly transform
-the canvas to display the connected node and will instead move elsewhere in the canvas.
+the canvas to display the connected node and will instead move elsewhere in the canvas. There is also an issue with the
+links not being added at all after a node has been deleted.
 
 HOURS: ~70
