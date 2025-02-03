@@ -16,15 +16,14 @@ interface VideoNodeProps {
 
 /**
  * The VideoNodeView class renders the elements of a Video node
- * and all of the properties needed, including a method to move to a linked
- * node.
+ * and all of the properties needed
  */
 @observer
 export class VideoNodeView extends React.Component<VideoNodeProps> {
-    // public moveTo(xCoord: number, yCoord: number) {
-    //     this.props.nodeCollection.x = xCoord;
-    //     this.props.nodeCollection.y = yCoord;
-    // }
+    /**
+     * Renders the elements of a Video Node so that it may be added to other components and viewed on a screen
+     * @returns the newly created video node
+     */
     render() {
         let store = this.props.store;
         let nodeCollection = this.props.nodeCollection;

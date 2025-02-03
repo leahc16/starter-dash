@@ -6,17 +6,24 @@ import { TopBar } from "./../TopBar";
 import { ResizeBar } from "./../ResizeBar";
 import "./WebsiteNodeView.scss";
 
+/**
+ * An interface that holds the properties for WebsiteNodeView
+ */
 interface WebsiteNodeProps {
     store: WebsiteNodeStore;
     nodeCollection: NodeCollectionStore;
 }
 
+/**
+ * The WebsiteNodeView class renders the elements of a Video node
+ * and all of the properties needed
+ */
 @observer
 export class WebsiteNodeView extends React.Component<WebsiteNodeProps> {
-    public moveTo(xCoord: number, yCoord: number) {
-        this.props.nodeCollection.x = xCoord;
-        this.props.nodeCollection.y = yCoord;
-    }
+    /**
+     * Renders the elements of a Website Node so that it may be added to other components and viewed on a screen
+     * @returns the newly created website node
+     */
     render() {
         let store = this.props.store;
         let nodeCollection = this.props.nodeCollection;

@@ -16,16 +16,10 @@ interface TextNodeProps {
 
 /**
  * The TextNodeView class renders the elements of a static text node
- * and all of the properties needed, including a method to move to a linked
- * node.
+ * and all of the properties needed
  */
 @observer
 export class TextNodeView extends React.Component<TextNodeProps> {
-    public moveTo(xCoord: number, yCoord: number) {
-        this.props.nodeCollection.x = xCoord;
-        this.props.nodeCollection.y = yCoord;
-    }
-
     /**
      * Renders the elements of a Text Node so that it may be added to other components and viewed on a screen
      * @returns the newly created text node

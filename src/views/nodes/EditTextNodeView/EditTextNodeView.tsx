@@ -18,8 +18,7 @@ interface EditTextNodeProps {
 
 /**
  * The EditTextNodeView class renders the elements of an editable text node
- * and all of the properties needed, including a method to move to a linked
- * node.
+ * and all of the properties needed
  */
 @observer
 export class EditTextNodeView extends React.Component<EditTextNodeProps> {

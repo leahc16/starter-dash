@@ -15,15 +15,14 @@ interface ImageNodeProps {
 }
 
 /**
- * The CollectionNodeView class renders the elements of a Collection node
- * and all of the properties needed, including a method to move to a linked
- * node.
+ * The ImageNodeView class renders the elements of an image node
+ * and all of the properties needed
  */
 @observer
 export class ImageNodeView extends React.Component<ImageNodeProps> {
     /**
-     * Renders the elements of a Collection Node so that it may be added to other components and viewed on a screen
-     * @returns the newly created collection node
+     * Renders the elements of an Image Node so that it may be added to other components and viewed on a screen
+     * @returns the newly created image node
      */
     render() {
         let store = this.props.store;

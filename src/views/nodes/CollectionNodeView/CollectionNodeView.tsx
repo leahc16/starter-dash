@@ -16,8 +16,7 @@ interface CollectNodeProps {
 
 /**
  * The CollectionNodeView class renders the elements of a Collection node
- * and all of the properties needed, including a method to move to a linked
- * node.
+ * and all of the properties needed
  */
 @observer
 export class CollectionNodeView extends React.Component<CollectNodeProps> {    
