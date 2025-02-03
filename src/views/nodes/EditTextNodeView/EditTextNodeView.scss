@@ -2,19 +2,9 @@
     &.editTextNode {
         background: #EE9B01;
     }
-    // .editor-container {
-    //     padding: 10px;
-    //     border: 2px solid #DA6A00;
-    //     border-radius: 4px;
-    //   //  background-color: #fff;
-    //    // min-height: 100px; // Ensure the editor has some initial height
-    //     overflow-y: auto;
-    // }
-    
-    // .editor-container .ProseMirror {
-    //     outline: none; // Remove focus outline
-    //     font-family: Arial, sans-serif;
-    //     font-size: 14px;
-    //     line-height: 1.5;
-    // }
+    .linked-nodes {
+        color: navy;
+        text-decoration: underline;
+        cursor: pointer;
+    }
 }

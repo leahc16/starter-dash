@@ -1,7 +1,9 @@
-import { observable, action } from "mobx";
+import { observable } from "mobx";
 import { NodeStore } from "./NodeStore";
-import { observer } from "mobx-react";
 
+/**
+ * The class that stores attributes for static text nodes, extends NodeStore
+ */
 export class StaticTextNodeStore extends NodeStore {
 
     constructor(initializer: Partial<StaticTextNodeStore>) {
@@ -27,17 +29,4 @@ export class StaticTextNodeStore extends NodeStore {
 
     @observable
     public text: string = "";
-
-  /*  @action
-    setText(newText: string) {
-        this.text = newText;
-    } */
-    // Function to link this node to another
-   // @observer
-//    @action
-//     public linkTo(node: StaticTextNodeStore) {
-//         if (!this.links.includes(node)) {
-//             this.links.push(node);
-//         }
-//     }
 }

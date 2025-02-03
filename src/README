@@ -1,1 +1,27 @@
 README!
+
+OVERVIEW:
+A mini-version of Dash, this application allows the user to display and work with several different medias in one
+workspace. Users may select the first five buttons on the left to add a node of their choosing that can be resized
+via the gray box in the top left of each node and moved around via the top dark green bar. Note that the nodes will
+not move until they have been resized first. The bottom three buttons will display the added nodes in a horizontal 
+line, delete a node, and link two nodes together accordingly. PLEASE make sure popups are not blocked as delete and
+link display a message on a popup prompting for which node(s) the user would like to delete/link. The nodes are 
+numbered in their title and these should be the numbers that are inputted into the prompts. Linking two nodes 
+together will display a list at the bottom of each node with clickable text that will take the user to the corresponding
+node.
+
+DESIGN:
+Each node extends their own interface that has the properties from NodeStore and NodeCollectionStore as they all are Nodes
+and require access to the NodeCollectionStore while linking. NodeCollectionStore handles the actual functions that affect
+all of the Nodes such as displaying the line view and linking. The FreeFormCanvas is the top level logic class because
+it creates and renders all of the Nodes in the main screen and is the one calling the methods in NodeCollectionStore. Each
+of the Nodes further have their own stores because they each store something unique from another, but still share core 
+qualities such as x and y coordinates, hence all extending NodeStore.
+
+KNOWN BUGS: 
+The nodes will not move either by dragging the top bar or pressing "view as list" until they have been 
+resized first. There is also the occasional issue where clicking the link to another node will not correctly transform
+the canvas to display the connected node and will instead move elsewhere in the canvas.
+
+HOURS: ~70

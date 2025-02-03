@@ -1,6 +1,9 @@
 import { observable } from "mobx";
 import { NodeStore } from "./NodeStore";
 
+/**
+ * The class that stores attributes for image nodes, extends NodeStore
+ */
 export class ImageNodeStore extends NodeStore {
 
     constructor(initializer: Partial<ImageNodeStore>) {

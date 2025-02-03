@@ -1,40 +1,35 @@
 import { observer } from "mobx-react";
 import * as React from 'react';
-import { EditTextNodeStore, NodeCollectionStore, NodeStore } from "../../../stores";
+import { EditTextNodeStore, NodeCollectionStore } from "../../../stores";
 import { TopBar } from "./../TopBar";
 import { TextEditor } from "../TextEditor";
 import "./../NodeView.scss";
 import "./EditTextNodeView.scss";
 import "react-quill/dist/quill.snow.css";
 import { ResizeBar } from "../ResizeBar";
-import { cursorTo } from "readline";
 
-
-// import { EditorContent, Editor } from "@tiptap/react";
-// import StarterKit from "@tiptap/starter-kit";
-
-
+/**
+ * An interface that holds the properties for EditTextNodeView
+ */
 interface EditTextNodeProps {
     store: EditTextNodeStore;
+    nodeCollection: NodeCollectionStore;
 }
 
-
-const link = {
-    color: 'navy',
-    cursor: 'pointer',
-    style: 'underline',
-};
+/**
+ * The EditTextNodeView class renders the elements of an editable text node
+ * and all of the properties needed, including a method to move to a linked
+ * node.
+ */
 @observer
 export class EditTextNodeView extends React.Component<EditTextNodeProps> {
-    handleChange = (value: string) => {
-        const { store } = this.props;
-        store.text = value; // Update the store with the new editor value
-    };
-
-    
-
+    /**
+     * Renders the elements of an Edit Text Node so that it may be added to other components and viewed on a screen
+     * @returns the newly created editable text node
+     */
     render() {
         let store = this.props.store;
+        let nodeCollection = this.props.nodeCollection;
         return (
             <div className="node editTextNode" style={{ transform: store.transform + store.resize}} onWheel={(e: React.WheelEvent) => {
                 e.stopPropagation();
@@ -46,22 +41,21 @@ export class EditTextNodeView extends React.Component<EditTextNodeProps> {
                     <div className="content">
                         <h3 className="title">{store.title}</h3>
                            <TextEditor
-                             store={store} // Bind to store's text property
+                             store={store} 
                              field="title"
                              initialText = {store.text} 
                             /> 
                         </div> 
                         {/* Render linked nodes */}
-                        <div className="linked-nodes" onClick={() => alert(234)} style={link}>
+                        <div className="linked-nodes">
                             {store.links.map((node, index) => (
-                                <div key={index} className="linked-node">
+                                <div key={index} className="linked-node" onClick={() => nodeCollection.moveTo(node.x, node.y)}>
                                     🔗 Linked to node {node.id}
                                 </div>
                             ))}
                         </div>                        
                     </div>
                 </div>
-          //  </div>
         );
     }
 } 
